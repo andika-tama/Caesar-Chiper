@@ -2,6 +2,7 @@ const plainText = document.querySelector('#plain-text');
 const karakterGeser = document.querySelector('#karakter')
 const dechiper = document.querySelector('.dechiper');
 const hasil = document.querySelector('.hasil');
+const keyGeser = document.querySelector('#pergeseran');
 
 dechiper.addEventListener('click', function(){
     const plainT = plainText.value;
@@ -12,7 +13,8 @@ dechiper.addEventListener('click', function(){
     
     let karakterBaru = [];
     let deskripsi = [];
-    let geser = 19;
+    const geser = Math.round(Math.abs(keyGeser.value));
+    keyGeser.value = geser;
 
     for(let i=0; i<karakterG.length; i++)
     {
