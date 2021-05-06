@@ -18,15 +18,27 @@ dechiper.addEventListener('click', function(){
 
     for(let i=0; i<karakterG.length; i++)
     {
-        if(i + (geser % karakterG.length) >= karakterG.length)
-        {
-            karakterBaru.push(karakterG[i + (geser % karakterG.length) - karakterG.length]);
-        }
-        if (i + (geser % karakterG.length) < karakterG.length) {
-            karakterBaru.push(karakterG[i + (geser % karakterG.length)]);
-        }
+        // if(i + (geser % karakterG.length) >= karakterG.length)
+        // {
+        //     karakterBaru.push(karakterG[i + (geser % karakterG.length) - karakterG.length]);
+        // }
+        // if (i + (geser % karakterG.length) < karakterG.length) {
+        //     karakterBaru.push(karakterG[i + (geser % karakterG.length)]);
+        // }
+
+        karakterBaru.push(karakterG[(i+geser) % karakterG.length]); //lebih simpel
+
+        // if(i - geser < 0)
+        // {
+        //     karakterBaru.push(karakterG[karakterG.length + (i-geser)]);
+        // }
+        // else{
+        //     karakterBaru.push(karakterG[(i-geser) % karakterG.length]);
+        // } //->untuk deskripsi!!
         
     }
+
+    console.log(karakterBaru);
 
     for(let i=0; i<plainT.length; i++)
     {
