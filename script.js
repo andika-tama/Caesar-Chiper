@@ -1,4 +1,3 @@
-const plainText = document.querySelector('#plain-text');
 const karakterGeser = document.querySelector('#karakter')
 const hasil = document.querySelector('.hasil-isi');
 const keyGeser = document.querySelector('#pergeseran');
@@ -7,7 +6,6 @@ const deskripsi = document.querySelector('#desk');
 const enskripsi = document.querySelector('#ens')
 const sub1 = document.querySelector('#sub-1');
 const subHasil = document.querySelector('#sub-hasil');
-const cipherText = document.querySelector('#cipher-text');
 const plainFix = document.querySelector('.plain-fix');
 
 
@@ -22,7 +20,7 @@ deskripsi.addEventListener('click', function(e){
     judul.innerHTML='Deskripsi';
     sub1.innerHTML='Cipher Text';
     subHasil.innerHTML='Plain Text';
-    plainText.id = 'cipher-text';
+    plainFix.id = 'cipher-text';
 })
 
 enskripsi.addEventListener('click', function(e){
@@ -47,7 +45,7 @@ keyGeser.addEventListener('input', cekId);
 
 function decoder(){
     console.log('decoder');
-    const plainT = plainText.value;
+    const plainT = plainFix.value;
     const karakterG = karakterGeser.value;
 
     // const plainT = 'dyvayv9 f6b dr5a a6 b5t6cv9 ayv 0vt9va0 6w ayv b5zcv90v, 69 f6b 1b0a dr5a a6 7b90bv r tr9vv9 z5 ayv ih0a tv5ab9f, sr0zt t647bav9 796x9r44z5x z0 r5 v00v5azr3 02z33 a6 3vr95 - 0av7yv5 yrd2z5x';
@@ -107,7 +105,7 @@ function decoder(){
 
 function encoder(){
     console.log('encoder');
-    const plainT = plainText.value;
+    const plainT = plainFix.value;
     const karakterG = karakterGeser.value;
 
     // const plainT = 'dyvayv9 f6b dr5a a6 b5t6cv9 ayv 0vt9va0 6w ayv b5zcv90v, 69 f6b 1b0a dr5a a6 7b90bv r tr9vv9 z5 ayv ih0a tv5ab9f, sr0zt t647bav9 796x9r44z5x z0 r5 v00v5azr3 02z33 a6 3vr95 - 0av7yv5 yrd2z5x';
