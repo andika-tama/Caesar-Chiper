@@ -2,6 +2,46 @@ const plainText = document.querySelector('#plain-text');
 const karakterGeser = document.querySelector('#karakter')
 const hasil = document.querySelector('.hasil-isi');
 const keyGeser = document.querySelector('#pergeseran');
+const judul = document.querySelector('#judul');
+const deskripsi = document.querySelector('#desk');
+const enskripsi = document.querySelector('#ens')
+const sub1 = document.querySelector('#sub-1');
+const subHasil = document.querySelector('#sub-hasil');
+const cipherText = document.querySelector('#cipher-text');
+
+
+
+
+deskripsi.addEventListener('click', function(e){
+
+    if(!e.target.classList.contains('active')){
+        e.target.classList.toggle('active');
+        enskripsi.classList.toggle('active');
+    }
+    judul.innerHTML='Deskripsi';
+    sub1.innerHTML='Cipher Text';
+    subHasil.innerHTML='Plain Text';
+    plainText.id = 'cipher-text';
+})
+
+enskripsi.addEventListener('click', function(e){
+
+    if(!e.target.classList.contains('active')){
+        e.target.classList.toggle('active');
+        deskripsi.classList.toggle('active');
+    }
+
+    judul.innerHTML='Enskripsi';
+    subHasil.innerHTML='Cipher Text';
+    sub1.innerHTML='Plain Text';
+    cipherText.id = 'plain-text';
+   
+})
+
+plainText.addEventListener('input', decoder);
+karakterGeser.addEventListener('input', decoder);
+keyGeser.addEventListener('input', decoder);
+
 
 function decoder(){
     const plainT = plainText.value;
@@ -112,7 +152,3 @@ function encoder(){
     hasil.innerHTML = pesanDeksripsi;
     
 }
-
-plainText.addEventListener('input', decoder);
-karakterGeser.addEventListener('input', decoder);
-keyGeser.addEventListener('input', decoder);

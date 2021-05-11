@@ -319,6 +319,12 @@ body {
     max-height: 250px;
 }
 
+#cipher-text {
+    height: 250px;
+    min-height: 250px;
+    max-height: 250px;
+}
+
 #karakter {
     height: 150px;
     min-height: 150px;
@@ -385,7 +391,7 @@ body {
     overflow: auto;
     text-align: justify;
     font-family: 'Courier New', Courier, monospace;
-    color: #966FD6;
+    color: #c71558;
     font-weight: bolder;
     font-size: 17px;
     letter-spacing: 1px;
