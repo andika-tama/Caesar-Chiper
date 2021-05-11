@@ -26,15 +26,15 @@ dechiper.addEventListener('click', function(){
         //     karakterBaru.push(karakterG[i + (geser % karakterG.length)]);
         // }
 
-        karakterBaru.push(karakterG[(i+geser) % karakterG.length]); //lebih simpel
+        //karakterBaru.push(karakterG[(i+geser) % karakterG.length]); //lebih simpel
 
-        // if(i - geser < 0)
-        // {
-        //     karakterBaru.push(karakterG[karakterG.length + (i-geser)]);
-        // }
-        // else{
-        //     karakterBaru.push(karakterG[(i-geser) % karakterG.length]);
-        // } //->untuk deskripsi!!
+        if(i - geser < 0)
+        {
+            karakterBaru.push(karakterG[karakterG.length + (i-geser)]);
+        }
+        else{
+            karakterBaru.push(karakterG[(i-geser) % karakterG.length]);
+        } //->untuk deskripsi!!
         
     }
 
