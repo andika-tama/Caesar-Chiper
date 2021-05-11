@@ -8,6 +8,7 @@ const enskripsi = document.querySelector('#ens')
 const sub1 = document.querySelector('#sub-1');
 const subHasil = document.querySelector('#sub-hasil');
 const cipherText = document.querySelector('#cipher-text');
+const plainFix = document.querySelector('.plain-fix');
 
 
 
@@ -34,16 +35,18 @@ enskripsi.addEventListener('click', function(e){
     judul.innerHTML='Enskripsi';
     subHasil.innerHTML='Cipher Text';
     sub1.innerHTML='Plain Text';
-    cipherText.id = 'plain-text';
-   
+    const cipherText = document.querySelector('#cipher-text');
+    cipherText.id = 'plain-text'; 
 })
 
-plainText.addEventListener('input', decoder);
-karakterGeser.addEventListener('input', decoder);
-keyGeser.addEventListener('input', decoder);
+plainFix.addEventListener('input', cekId);
+karakterGeser.addEventListener('input', cekId);
+keyGeser.addEventListener('input', cekId);
+
 
 
 function decoder(){
+    console.log('decoder');
     const plainT = plainText.value;
     const karakterG = karakterGeser.value;
 
@@ -103,6 +106,7 @@ function decoder(){
 }
 
 function encoder(){
+    console.log('encoder');
     const plainT = plainText.value;
     const karakterG = karakterGeser.value;
 
@@ -116,15 +120,12 @@ function encoder(){
 
     for(let i=0; i<karakterG.length; i++)
     {
-        // if(i + (geser % karakterG.length) >= karakterG.length)
-        // {
-        //     karakterBaru.push(karakterG[i + (geser % karakterG.length) - karakterG.length]);
-        // }
-        // if (i + (geser % karakterG.length) < karakterG.length) {
-        //     karakterBaru.push(karakterG[i + (geser % karakterG.length)]);
-        // }
-
-        karakterBaru.push(karakterG[(i+geser) % karakterG.length]); //lebih simpel
+        if(i + (geser % karakterG.length) >= karakterG.length){
+            karakterBaru.push(karakterG[(i+(geser % karakterG.length)) - karakterG.length]);
+        }
+        else{
+            karakterBaru.push(karakterG[i+(geser % karakterG.length)]); //lebih simpel
+        }     
     }
 
     // console.log(karakterBaru);
@@ -151,4 +152,14 @@ function encoder(){
     pesanDeksripsi = deskripsi.join("");
     hasil.innerHTML = pesanDeksripsi;
     
+}
+
+function cekId(){
+    if(plainFix.getAttribute('id')=="plain-text"){
+        encoder();
+    }
+    else
+    {
+        decoder();
+    }
 }
