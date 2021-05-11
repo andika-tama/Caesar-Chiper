@@ -4,44 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ceasar Chiper</title>
+    <title>Ceasar Cipher</title>
 
-    <style>
-        .hasil {
-            border: 1px solid;
-            border-color: salmon;
-            padding: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Ceasar-Chipper</h1>
-    
-    <br>
-    
-    <label for="plain-text">Plain Text</label>
-    <br>
-    <textarea name="Plain Text" id="plain-text" cols="100" rows="10">dyvayv9 f6b dr5a a6 b5t6cv9 ayv 0vt9va0 6w ayv b5zcv90v, 69 f6b 1b0a dr5a a6 7b90bv r tr9vv9 z5 ayv ih0a tv5ab9f, sr0zt t647bav9 796x9r44z5x z0 r5 v00v5azr3 02z33 a6 3vr95 - 0av7yv5 yrd2z5x</textarea>
-    
-    <br>
-    <br>
-    <label for="plain-text">Karakter Geser</label>
-    <br>
-    <textarea name="karakter" id="karakter" cols="100" rows="10">abcdefghijklmnopqrstuvwxyz1234567890</textarea>
 
-    <br>
-    <br>
-    <label for="plain-text">Pergeseran</label>
-    <br>
-    <input type="number" id="pergeseran" min="1">
+    <div class="wrapper cf">
+        <div class="container cf">
+            <button class="enskripsi active">Encoder</button>
+            <button class="deskripsi">Decoder</button>
+    
+            <h2>Enskripsi</h2>
+            <hr>
+            <label for="" class="plaintext">PlainText</label>
+            <textarea name="" id="plain-text" class="plain">whether you want to uncover the secrets of the universe, or you just want to pursue a career in the 21st century, basic computer programming is an essential skill to learn - stephen hawking</textarea>
+    
+            <label for="" class="kunci">Kunci Geser</label>
+            <input type="number" name="" id="pergeseran" value="5" min="0" >
+    
+            <label for="" class="plaintext">Character</label>
+            <textarea name="" id="karakter" class="plain">abcdefghijklmnopqrstuvwxyz1234567890</textarea>
+        </div>
 
-    <br>
-    <br>
-    <button class="dechiper">Dechiper!</button>
+        <div class="panah cf"></div>
 
-    <br>
-    <br>
-    <div class="hasil"></div>
+        <div class="container-hasil cf">
+            <h2>Hasil Enskripsi</h2>
+
+            
+            <div class="asal-hasil-box">
+                <label for="" class="asal-hasil-label">Ciphertext</label>
+                <div class="hasil-isi"></div>
+            </div>
+
+            <label for="" class="hasil-label"></label>
+            <div class="hasil-box"></div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
