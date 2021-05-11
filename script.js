@@ -33,8 +33,7 @@ enskripsi.addEventListener('click', function(e){
     judul.innerHTML='Enskripsi';
     subHasil.innerHTML='Cipher Text';
     sub1.innerHTML='Plain Text';
-    const cipherText = document.querySelector('#cipher-text');
-    cipherText.id = 'plain-text'; 
+    plainFix.id = 'plain-text'; 
 })
 
 plainFix.addEventListener('input', cekId);
