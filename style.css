@@ -1,6 +1,6 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+v2.0 | 20110126
+License: none (public domain)
 */
 
 html,
@@ -190,7 +190,6 @@ body {
     position: relative;
     padding: 0px;
     border-radius: 30px;
-    padding-bottom: 30px;
 }
 
 .container .enskripsi {
@@ -397,4 +396,30 @@ body {
     letter-spacing: 1px;
 
     height: 100%;
+}
+
+.container .footer {
+
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: inline-block;
+    border: 0px solid black;
+    opacity: 0.9;
+    height: 40px;
+    color: whitesmoke;
+    background-color: #B399D4;
+    text-align: center;
+    padding-top: 12px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.footer a:hover {
+    color: rgb(255, 27, 27);
 }
