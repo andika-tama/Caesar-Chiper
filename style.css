@@ -184,66 +184,68 @@ body {
 .container {
     background-color: white;
     opacity: 0.85;
-    width: 950px;
+    width: 90%;
     margin: auto;
     border: 1px solid #7D54AE;
     position: relative;
     padding: 0px;
     border-radius: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr 3fr 2fr;
+    grid-template-areas:
+        'encoder decoder'
+        'judul judul'
+        'text keyword'
+        'hasil hasil'
+        'footer footer';
 }
+
 
 .container .enskripsi {
     display: inline-block;
-    width: 475px;
-    height: 85px;
+    width: 100%;
     border-top-left-radius: 30px;
     background-color: #F5E1FD;
     color: #565A61;
     font-size: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    float: left;
     margin-bottom: 20px;
     border: none;
+    grid-area: encoder;
 }
 
 .container .enskripsi:hover {
     display: inline-block;
-    width: 475px;
-    height: 85px;
     border-top-left-radius: 30px;
     color: rgb(255, 249, 249);
     background-color: #957DAD;
     font-size: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    float: left;
     margin-bottom: 20px;
     border: none;
 }
 
 .container .deskripsi {
     display: inline-block;
-    width: 475px;
-    height: 85px;
+    width: 100%;
     border-top-right-radius: 30px;
     background-color: #F5E1FD;
     color: #565A61;
     font-size: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    float: left;
     margin-bottom: 20px;
     border: none;
+    grid-area: decoder;
 }
 
 .container .deskripsi:hover {
     display: inline-block;
-    width: 475px;
-    height: 85px;
     border-top-right-radius: 30px;
     color: rgb(255, 249, 249);
     background-color: #957DAD;
     font-size: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    float: left;
     margin-bottom: 20px;
     border: none;
 }
@@ -253,13 +255,16 @@ body {
     background-color: #B399D4
 }
 
+.container .tittle {
+    grid-area: judul;
+}
+
 .container h2 {
     color: #966FD6;
     font-family: cursive;
     font-weight: bolder;
     font-size: 30px;
     text-align: center;
-    margin-bottom: 10px;
 }
 
 .container hr {
@@ -273,15 +278,26 @@ body {
     opacity: 0.7;
 }
 
-.container .col-1,
+/* .container .col-1,
 .col-2 {
     width: 435px;
     padding: 20px;
     height: 300px;
 
     float: left;
+} */
+
+.container .text {
+    grid-area: text;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
+.container .keyword {
+    grid-area: keyword;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
 .container label {
     display: block;
@@ -361,7 +377,7 @@ body {
     padding: 20px;
     width: 100%;
     background-color: white;
-    margin-top: -10px;
+    grid-area: hasil;
 }
 
 .container .asal-hasil-box {
@@ -406,13 +422,13 @@ body {
     display: inline-block;
     border: 0px solid black;
     opacity: 0.9;
-    height: 40px;
     color: whitesmoke;
     background-color: #B399D4;
     text-align: center;
-    padding-top: 12px;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    padding: 12px;
+    border-bottom-left-radius: 29px;
+    border-bottom-right-radius: 29px;
+    grid-area: footer;
 }
 
 .footer a {
