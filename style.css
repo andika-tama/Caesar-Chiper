@@ -192,11 +192,12 @@ body {
     border-radius: 30px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 1fr 3fr 2fr;
+    grid-template-rows: 80px;
     grid-template-areas:
         'encoder decoder'
         'judul judul'
-        'text keyword'
+        'text text'
+        'keyword keyword'
         'hasil hasil'
         'footer footer';
 }
@@ -313,7 +314,6 @@ body {
     align-content: center;
     display: inline-block;
     width: 100%;
-    min-width: 100%;
     max-width: 100%;
     border: 2px dashed #F4C4FF;
     border-radius: 12px;
@@ -330,19 +330,16 @@ body {
 
 #plain-text {
     height: 250px;
-    min-height: 250px;
     max-height: 250px;
 }
 
 #cipher-text {
     height: 250px;
-    min-height: 250px;
     max-height: 250px;
 }
 
 #karakter {
     height: 150px;
-    min-height: 150px;
     max-height: 150px;
     margin-bottom: 10px;
 }
@@ -438,4 +435,17 @@ body {
 
 .footer a:hover {
     color: rgb(255, 27, 27);
+}
+
+
+@media screen and (min-width : 768px) {
+    .container {
+        grid-template-rows: 1fr 1fr 3fr 2fr;
+        grid-template-areas:
+            'encoder decoder'
+            'judul judul'
+            'text keyword'
+            'hasil hasil'
+            'footer footer';
+    }
 }
