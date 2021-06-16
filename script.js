@@ -160,3 +160,29 @@ function cekId(){
         decoder();
     }
 }
+
+// Button Copy Clipboard!
+
+const buttonCopy = document.querySelector('.copy')
+
+buttonCopy.addEventListener('click', function(e){
+
+    setTimeout(function(){
+        e.target.innerHTML = "Salin Hasil"
+    }, 3000)
+
+    if(hasil.outerText !== "")
+    {
+        const tempInput = document.createElement('input')
+        tempInput.value = hasil.outerText;
+        document.body.appendChild(tempInput)
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        e.target.innerHTML = `Hasil Berhasil Disalin!`
+    }
+    else
+    {
+        e.target.innerHTML = `Tidak Ada Kata Yang Dapat Disalin!`
+    }
+})

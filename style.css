@@ -199,6 +199,7 @@ body {
         'text text'
         'keyword keyword'
         'hasil hasil'
+        'btn btn'
         'footer footer';
 }
 
@@ -419,7 +420,6 @@ body {
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-
     overflow: auto;
     text-align: justify;
     font-family: 'Courier New', Courier, monospace;
@@ -427,8 +427,29 @@ body {
     font-weight: bolder;
     font-size: 17px;
     letter-spacing: 1px;
-
     height: 100%;
+}
+
+/* untuk button copy clipboard */
+.container .copy {
+    grid-area: btn;
+    display: block;
+    margin-bottom: 20px;
+    width: 75%;
+    justify-self: center;
+    height: 50px;
+    border: 2px solid #F4C4FF;
+    border-radius: 20px;
+    font-size: 1.2em;
+    background-color: #F5E1FD;
+    color: #565A61;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container .copy:hover {
+    color: rgb(255, 249, 249);
+    background-color: #957DAD;
+    border: 2px solid rgb(146, 69, 209);
 }
 
 .container .footer {
@@ -467,6 +488,7 @@ body {
             'judul judul'
             'text keyword'
             'hasil hasil'
+            'btn btn'
             'footer footer';
     }
 
