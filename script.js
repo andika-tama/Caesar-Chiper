@@ -174,11 +174,11 @@ buttonCopy.addEventListener('click', function(e){
     if(hasil.outerText !== "")
     {
         const tempInput = document.createElement('input')
-        tempInput.value = hasil.outerText;
+        tempInput.value = hasil.innerText
         document.body.appendChild(tempInput)
-        tempInput.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempInput);
+        tempInput.select()
+        document.execCommand("copy")
+        document.body.removeChild(tempInput)
         e.target.innerHTML = `Hasil Berhasil Disalin!`
     }
     else
