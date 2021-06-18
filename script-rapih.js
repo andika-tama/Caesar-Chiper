@@ -72,6 +72,7 @@ function cekInputId () {
     }
     else{
         console.log("Jalankan Deskripsi");
+        hasil.innerHTML=decoder(inputText.value, character.value, keyGeser.value)
     }
 }
 
@@ -103,7 +104,25 @@ function encoder (inputTeks, karakter, kunciGeser){
 //buat fungsi deksripsi
 function decoder (inputTeks, karakter, kunciGeser){
 
-    //something ...
+    //buat variabel baru untuk menampung nilai karakter geser
+    var karakterBaru = []
+    
+    for(let index=0; index<karakter.length; index++)
+    {   
+        //bila index tambah karakternya lebuh dari panjang jumlah karakter maka lakukan proses berikut
+        if(index - (kunciGeser % karakter.length) < 0){
+            karakterBaru.push(karakter[(index-(kunciGeser % karakter.length)) + karakter.length])
+        }
+        //bila index tambah karakternya tidak lebih dari panjang jumlah karakter maka lakukan proses berikut
+        else{
+            karakterBaru.push(karakter[index-(kunciGeser % karakter.length)])
+        } 
+    }
+
+    const hasilDecode = terjemah(inputTeks, karakterBaru, karakter)
+    
+    //return hasil dari proses penerjemahan dengan
+    return hasilDecode
 
 }
 
@@ -134,3 +153,44 @@ function terjemah(inputan, karakterBaru, karakter){
     //return hasil penyesuain dengan join
     return hasil.join("")
 }
+
+//buat fungsi untuk mengcopy hasil encode / decode ke clipboard
+
+//ambil button (trigger)
+const btnCopy = document.querySelector('.copy')
+
+btnCopy.addEventListener('click', function(e){
+
+    //buat fungsi agar teks button kembali seperti semula
+    setTimeout(function(){
+        e.target.innerHTML = "Salin!"
+    }, 3000)
+
+    //jika ada teks hasil, maka copy ke clipboard
+    if(hasil.innerHTML !== ""){
+
+        //buat temporari input
+        const tempInput = document.createElement('input')
+
+        //isikan temporary input dengan teks hasil
+        tempInput.value = hasil.innerHTML
+
+        //pasang temporary input pada body
+        document.body.appendChild(tempInput)
+
+        //jalanken menu copy ke clipboard
+        tempInput.select()
+        document.execCommand("copy")
+
+        //hapus temporary input dalam body
+        document.body.removeChild(tempInput)
+
+        //ubah teks button
+        e.target.innerHTML = "Berhasil disalin!"
+    }
+    //bila tidak ada teks maka tampilkan pesan tidak ada teks
+    else
+    {
+        e.target.innerHTML = "Tidak ada teks yang disalin!"
+    }
+})
